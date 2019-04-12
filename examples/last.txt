@@ -1,0 +1,25 @@
+module T where
+
+lastt [] = error "Foo"
+lastt (x:[]) = x
+lastt (x:xs@(_:_)) = lastt xs
+
+
+lastt
+  = \ @ p_aXx ds_d2ct ->
+      case ds_d2ct of {
+        [] -> lvl12_r2f2;
+        : x_atH ds1_d2cG ->
+          case ds1_d2cG of wild1_X8 {
+            [] -> x_atH;
+            : ds2_d2cH ds3_d2cI -> lastt wild1_X8
+          }
+      }
+
+lastt_$slastt
+  = \ @ p_aXv sc_s2eR sc1_s2eS ->
+      case sc1_s2eS of {
+        [] -> sc_s2eR;
+        : ds_d2cF ds1_d2cG -> lastt_$slastt ds_d2cF ds1_d2cG
+      }
+end Rec }
