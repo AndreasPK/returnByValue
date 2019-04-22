@@ -1,0 +1,104 @@
+\documentclass[acmsmall,review,anonymous]{acmart}\settopmatter{printfolios=true,printccs=false,printacmref=false}
+
+\acmJournal{PACMPL}
+\acmVolume{1}
+\acmNumber{CONF} % CONF = POPL or ICFP or OOPSLA
+\acmArticle{1}
+\acmYear{2018}
+\acmMonth{1}
+\acmDOI{} % \acmDOI{10.1145/nnnnnnn.nnnnnnn}
+\startPage{1}
+
+\setcopyright{rightsretained}
+
+%% Bibliography style
+\bibliographystyle{ACM-Reference-Format}
+%% Citation style
+%% Note: author/year citations are required for papers published as an
+%% issue of PACMPL.
+\citestyle{acmauthoryear}   %% For author/year citations
+
+
+%% Some recommended packages.
+\usepackage{booktabs}   %% For formal tables:
+                        %% http://ctan.org/pkg/booktabs
+\usepackage{subcaption} %% For complex figures with subfigures/subcaptions
+                        %% http://ctan.org/pkg/subcaption
+
+
+\begin{document}
+
+%% Title information
+\title[Return By Value]{Call by Name, Return by Value}         %% [Short Title] is optional;
+                                        %% when present, will be used in
+                                        %% header instead of Full Title.
+\subtitle{Knowing when the work is already done}                     %% \subtitle is optional
+
+
+\author{Andreas Klebinger}
+\affiliation{
+  \position{Position1}
+  \department{Department1}              %% \department is recommended
+  \institution{Institution1}            %% \institution is required
+  \streetaddress{Street1 Address1}
+  \city{City1}
+  \state{State1}
+  \postcode{Post-Code1}
+  \country{Country1}                    %% \country is recommended
+}
+\email{first1.last1@inst1.edu}          %% \email is recommended
+
+\author{Jos\'{e} Manuel Calder\'{o}n Trilla}
+\affiliation{
+  \institution{Galois, Inc.}            %% \institution is required
+}
+\email{jmct@jmct.cc}          %% \email is recommended
+
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\keywords{optimization, lazy functional languages, haskell, static analysis}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+\input{intro}
+
+\section{Avoiding Evaluation Checks}
+\label{sec:optimization}
+\input{optimization}
+
+% I think a section should go here that gives a quick review of STG
+% and what constructs are necessary to know
+\section{STG, In Brief}
+\label{sec:stg}
+\input{stg}
+
+\section{Status Analysis}
+\label{sec:analysis}
+\input{analysis}
+
+\section{Transformation}
+\label{sec:transform}
+\input{transform}
+
+\section{Evaluation}
+\label{sec:evaluation}
+\input{evaluation}
+
+\section{Discussion}
+\label{sec:discussion}
+\input{discussion}
+
+\section{Related Work}
+\label{sec:related-work}
+\input{related-work}
+
+\section{Conclusions and Future Work}
+\label{sec:conclusions}
+\input{conclusion}
+
+\end{document}
