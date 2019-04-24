@@ -1,0 +1,39 @@
+
+
+      ^ evald
+      |
+      v lazy
+
+
+data List = Cons [!]a List | Nil
+
+assume lastt x => evald
+
+data List = Cons a List | Nil
+
+xs = (error "foo") : _ : []
+
+         Strict
+         / | \
+        /  |  \
+     Tag1 Tag2  Tag3   <- Limit to X constructors
+       \   |   /
+        \  |  /
+         \ | /
+          lazy
+
+                 /-Cons -\
+          Strict          Lazy
+                 \-Nil  -/
+
+
+lastt
+  = \ xs ->
+      case xs of {
+        [] -> lvl12_r2f2; => (error "emptyList")
+        : x_atH ds1_d2cG ->
+          case ds1_d2cG of wild1_X8 {
+            [] -> x_atH;
+            : ds2_d2cH ds3_d2cI -> lastt wild1_X8
+          }
+      }

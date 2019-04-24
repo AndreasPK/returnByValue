@@ -1,0 +1,47 @@
+
+lastt
+  = \ lazy:ds_d2ct ->
+
+      case ds_d2ct of {
+      => strict:ds_d2ct
+        [] -> lvl12_r2f2; (error "emptyList")
+        : lazy:x_atH lazy:ds1_d2cG ->
+          case ds1_d2cG of strict:wild1_X8 {
+            [] -> x_atH;
+            : ds2_d2cH ds3_d2cI -> lastt strict:wild1_X8
+          }
+      }
+
+lastt
+  = \ strict:ds_d2ct ->
+
+      case strict:ds_d2ct of {
+        [] -> lvl12_r2f2; (error "emptyList")
+        : lazy:x_atH lazy:ds1_d2cG ->
+          case ds1_d2cG of strict:wild1_X8 {
+            [] -> x_atH;
+            : ds2_d2cH ds3_d2cI -> lastt strict:wild1_X8
+          }
+      }
+
+=> another pass
+
+if env1 == env2 then env1
+
+
+data List = Cons !a List | Nil
+
+lastt
+  = \ lazy:ds_d2ct ->
+
+      case ds_d2ct of {
+      => strict:ds_d2ct
+        [] -> lvl12_r2f2; (error "emptyList")
+        : lazy:x_atH lazy:ds1_d2cG ->
+          case ds1_d2cG of strict:wild1_X8 {
+            [] -> strict:x_atH;
+            : ds2_d2cH ds3_d2cI -> lastt strict:wild1_X8
+          }
+      }
+
+O( (|domain|^args) * functionSize)
